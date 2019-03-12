@@ -5,6 +5,7 @@ parameters:
   useRemoteDockerServer: false
 jobs:
 - job: ${{ parameters.name }}
+  timeoutInMinutes: 120
   pool: ${{ parameters.pool }}
   variables:
     ${{ if eq(parameters.useRemoteDockerServer, 'true') }}:
