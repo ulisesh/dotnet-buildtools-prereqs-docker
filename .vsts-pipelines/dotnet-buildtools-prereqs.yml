@@ -8,8 +8,7 @@ jobs:
   parameters:
     name: Build_Linux_amd64
     pool: # linuxAmd64Pool
-      name: DotNet-Build
-      demands: agent.os -equals linux
+      name: Hosted Ubuntu 1604
     architecture: amd64
 - template: jobs/build-images.yml
   parameters:
