@@ -10,25 +10,25 @@ jobs:
     pool: # linuxAmd64Pool
       name: Hosted Ubuntu 1604
     architecture: amd64
-# - template: jobs/build-images.yml
-#   parameters:
-#     name: Build_Linux_arm64v8
-#     pool: # linuxArm64v8Pool
-#       name: DotNetCore-Infra
-#       demands:
-#       - agent.os -equals linux
-#       - RemoteDockerServerOS -equals linux
-#       - RemoteDockerServerArch -equals arm64v8
-#     architecture: arm64
-#     useRemoteDockerServer: true
-# - template: jobs/build-images.yml
-#   parameters:
-#     name: Build_Linux_arm32v7
-#     pool: # linuxArm32v7Pool
-#       name: DotNetCore-Infra
-#       demands:
-#       - agent.os -equals linux
-#       - RemoteDockerServerOS -equals linux
-#       - RemoteDockerServerArch -equals arm32v7
-#     architecture: arm
-#     useRemoteDockerServer: true
+- template: jobs/build-images.yml
+  parameters:
+    name: Build_Linux_arm64v8
+    pool: # linuxArm64v8Pool
+      name: DotNetCore-Infra
+      demands:
+      - agent.os -equals linux
+      - RemoteDockerServerOS -equals linux
+      - RemoteDockerServerArch -equals arm64v8
+    architecture: arm64
+    useRemoteDockerServer: true
+- template: jobs/build-images.yml
+  parameters:
+    name: Build_Linux_arm32v7
+    pool: # linuxArm32v7Pool
+      name: DotNetCore-Infra
+      demands:
+      - agent.os -equals linux
+      - RemoteDockerServerOS -equals linux
+      - RemoteDockerServerArch -equals arm32v7
+    architecture: arm
+    useRemoteDockerServer: true
